@@ -3,34 +3,38 @@
 # 두 숫자의 사칙연산 프로그램
 
 def calculate():
-    try:
-    # 두 숫자 입력 받기
+    # 사용자로부터 두 숫자 입력 받기
     num1 = float(input("첫 번째 숫자를 입력하세요: "))
     num2 = float(input("두 번째 숫자를 입력하세요: "))
-    
-    # 사칙연산 결과 계산
-    addition = num1 + num2
-    subtraction = num1 - num2
-    multiplication = num1 * num2
-    
-    # 나눗셈은 0으로 나누는 경우를 처리해야 함
-    if num2 == 0:
-        division = "0으로 나눌 수 없습니다"
-    else:
-        division = num1 / num2
-    
-    # 결과 출력
-    print("\n===== 계산 결과 =====")
-    print(f"{num1} + {num2} = {addition}")
-    print(f"{num1} - {num2} = {subtraction}")
-    print(f"{num1} * {num2} = {multiplication}")
-    print(f"{num1} / {num2} = {division}")
-    print("=====================")
-    
-except ValueError:
-    print("오류: 유효한 숫자를 입력해주세요.")
-    # 다시 입력받기
-    calculate()
 
-# 프로그램 실행
+    # 사용자로부터 수행할 연산 선택받기
+    print("수행할 연산을 선택하세요:")
+    print("1. 덧셈")
+    print("2. 뺄셈")
+    print("3. 곱셈")
+    print("4. 나눗셈")
+
+    choice = input("연산 선택(1/2/3/4): ")
+
+    # 선택된 연산에 따라 계산 수행
+    if choice == '1':
+        result = num1 + num2
+        print(f"결과: {num1} + {num2} = {result}")
+    elif choice == '2':
+        result = num1 - num2
+        print(f"결과: {num1} - {num2} = {result}")
+    elif choice == '3':
+        result = num1 * num2
+        print(f"결과: {num1} * {num2} = {result}")
+    elif choice == '4':
+        if num2 != 0:
+            result = num1 / num2
+            print(f"결과: {num1} / {num2} = {result}")
+        else:
+            print("오류: 0으로 나눌 수 없습니다.")
+    else:
+        print("잘못된 선택입니다. 올바른 번호를 선택하세요.")
+
+# 함수 호출
 calculate()
+
