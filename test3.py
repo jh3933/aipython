@@ -4,6 +4,15 @@ def print_cat():
       ( o.o ) 
       > ^ <
     """
-    print(cat_art)
+    for line in cat:
+        print(line)
 
-print_cat()
+
+
+for i in range(3)
+   # print(i)
+   print_cat()
+
+
+
+# print_cat()
